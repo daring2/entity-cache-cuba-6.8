@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/gitlab/daring/sandbox/cuba/screens.xml"/>
+    <screen id="test$RuleType.browse"
+            template="com/gitlab/daring/sandbox/cuba/web/ruletype/rule-type-browse.xml"/>
+    <screen id="test$RuleType.edit"
+            template="com/gitlab/daring/sandbox/cuba/web/ruletype/rule-type-edit.xml"/>
+    <screen id="test$Rule.browse"
+            template="com/gitlab/daring/sandbox/cuba/web/rule/rule-browse.xml"/>
+    <screen id="test$Rule.edit"
+            template="com/gitlab/daring/sandbox/cuba/web/rule/rule-edit.xml"/>
+</screen-config>

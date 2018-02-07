@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.gitlab.daring.sandbox.cuba.web.rule.RuleBrowse"
+        focusComponent="rulesTable"
+        lookupComponent="rulesTable"
+        messagesPack="com.gitlab.daring.sandbox.cuba.web.rule">
+    <dsContext>
+        <collectionDatasource id="rulesDs"
+                              class="com.gitlab.daring.sandbox.cuba.entity.Rule"
+                              view="full">
+            <query>
+                <![CDATA[select e from test$Rule e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="rulesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="rulesTable"
+                datasource="rulesDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="rulesTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="code"/>
+                <column id="type"/>
+            </columns>
+            <rows datasource="rulesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="rulesTable.create"/>
+                <button id="editBtn"
+                        action="rulesTable.edit"/>
+                <button id="removeBtn"
+                        action="rulesTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

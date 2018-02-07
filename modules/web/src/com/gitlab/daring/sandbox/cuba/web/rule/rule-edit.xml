@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.gitlab.daring.sandbox.cuba.web.rule.RuleEdit"
+        datasource="ruleDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.gitlab.daring.sandbox.cuba.web.rule">
+    <dsContext>
+        <datasource id="ruleDs"
+                    class="com.gitlab.daring.sandbox.cuba.entity.Rule"
+                    view="full"/>
+        <collectionDatasource id="typesDs"
+                              class="com.gitlab.daring.sandbox.cuba.entity.RuleType"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from test$RuleType e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="ruleDs">
+            <column width="250px">
+                <field property="code"/>
+                <field optionsDatasource="typesDs"
+                       property="type"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

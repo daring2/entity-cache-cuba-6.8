@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.gitlab.daring.sandbox.cuba.web.ruletype.RuleTypeBrowse"
+        focusComponent="ruleTypesTable"
+        lookupComponent="ruleTypesTable"
+        messagesPack="com.gitlab.daring.sandbox.cuba.web.ruletype">
+    <dsContext>
+        <groupDatasource id="ruleTypesDs"
+                         class="com.gitlab.daring.sandbox.cuba.entity.RuleType"
+                         view="_local">
+            <query>
+                <![CDATA[select e from test$RuleType e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="ruleTypesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="ruleTypesTable"
+                datasource="ruleTypesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="ruleTypesTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="code"/>
+            </columns>
+            <rows datasource="ruleTypesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="ruleTypesTable.create"/>
+                <button id="editBtn"
+                        action="ruleTypesTable.edit"/>
+                <button id="removeBtn"
+                        action="ruleTypesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
