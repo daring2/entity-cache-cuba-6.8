@@ -11,7 +11,8 @@
                     view="full"/>
         <collectionDatasource id="typesDs"
                               class="com.gitlab.daring.sandbox.cuba.entity.RuleType"
-                              view="_minimal">
+                              view="_minimal"
+                              cacheable="true">
             <query>
                 <![CDATA[select e from test$RuleType e]]>
             </query>
