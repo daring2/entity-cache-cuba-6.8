@@ -38,6 +38,10 @@ cuba {
     }
     tomcat {
         dir = "$project.rootDir/deploy/tomcat"
+        port = 8180
+        shutdownPort = 8105
+        ajpPort = 8109
+        debugPort = 8788
     }
 }
 
@@ -198,7 +202,7 @@ task restart(dependsOn: ['stop', ":${modulePrefix}-core:deploy", ":${modulePrefi
     doLast {
         ant.waitfor(maxwait: 6, maxwaitunit: 'second', checkevery: 2, checkeveryunit: 'second') {
             not {
-                socket(server: 'localhost', port: '8787')
+                socket(server: 'localhost', port: '8788')
             }
         }
         start.execute()
