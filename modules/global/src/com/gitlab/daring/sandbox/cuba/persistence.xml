@@ -3,6 +3,8 @@
              version="2.0">
     <persistence-unit name="entity-cache-cuba-68"
                       transaction-type="RESOURCE_LOCAL">
+        <class>com.gitlab.daring.sandbox.cuba.entity.BaseEntity</class>
+        <class>com.gitlab.daring.sandbox.cuba.entity.BaseNamedEntity</class>
         <class>com.gitlab.daring.sandbox.cuba.entity.Rule</class>
         <class>com.gitlab.daring.sandbox.cuba.entity.RuleType</class>
     </persistence-unit>

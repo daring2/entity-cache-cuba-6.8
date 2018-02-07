@@ -14,7 +14,7 @@ import java.util.Date;
 @NamePattern("%s|code")
 @Table(name = "TEST_RULE")
 @Entity(name = "test$Rule")
-public class Rule extends BaseLongIdEntity implements Updatable, Creatable {
+public class Rule extends BaseEntity {
     private static final long serialVersionUID = 658633840714768352L;
 
     @NotNull
@@ -27,18 +27,6 @@ public class Rule extends BaseLongIdEntity implements Updatable, Creatable {
     @JoinColumn(name = "TYPE_ID")
     protected RuleType type;
 
-    @Column(name = "CREATE_TS")
-    protected Date createTs;
-
-    @Column(name = "CREATED_BY", length = 50)
-    protected String createdBy;
-
-    @Column(name = "UPDATE_TS")
-    protected Date updateTs;
-
-    @Column(name = "UPDATED_BY", length = 50)
-    protected String updatedBy;
-
     public RuleType getType() {
         return type;
     }
@@ -47,8 +35,6 @@ public class Rule extends BaseLongIdEntity implements Updatable, Creatable {
         this.type = type;
     }
 
-
-
     public void setCode(String code) {
         this.code = code;
     }
@@ -56,46 +42,5 @@ public class Rule extends BaseLongIdEntity implements Updatable, Creatable {
     public String getCode() {
         return code;
     }
-
-    @Override
-    public void setCreateTs(Date createTs) {
-        this.createTs = createTs;
-    }
-
-    @Override
-    public Date getCreateTs() {
-        return createTs;
-    }
-
-    @Override
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    @Override
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    @Override
-    public void setUpdateTs(Date updateTs) {
-        this.updateTs = updateTs;
-    }
-
-    @Override
-    public Date getUpdateTs() {
-        return updateTs;
-    }
-
-    @Override
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    @Override
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
 
 }
